@@ -501,6 +501,15 @@
   animation: marquee 32s linear infinite;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .marqueeGroup {
   display: flex;
   gap: 52px;
@@ -956,5 +965,36 @@
 
   .navLinks {
     display: none;
+  }
+
+  .contatoForm {
+    grid-template-columns: 1fr;
+  }
+
+  .inputField,
+  .inputField:nth-of-type(2),
+  .textareaField,
+  .submitBtn {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    gap: 10px;
+    padding: 14px clamp(16px, 5vw, 64px);
+  }
+
+  .themeSwitch {
+    display: none;
+  }
+
+  .navBrandName {
+    font-size: 14px;
+  }
+
+  .navCta {
+    padding: 9px 16px;
+    font-size: 13px;
   }
 }
